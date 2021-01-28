@@ -81,6 +81,7 @@
     "entities": "2.1.0",
     "etag": "1.8.1",
     "fanfou-sdk": "4.2.0",
+    "get-website-favicon": "0.0.7",
     "git-rev-sync": "3.0.1",
     "googleapis": "67.0.0",
     "got": "11.8.1",
