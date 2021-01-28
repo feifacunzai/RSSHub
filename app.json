@@ -31,6 +31,9 @@
         },
         "YOUTUBE_KEY": {
             "required": false
+        },
+        "ALLOW_ORIGIN": {
+            "required": false
         }
     }
 }
