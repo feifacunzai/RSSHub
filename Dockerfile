@@ -6,8 +6,8 @@ LABEL MAINTAINER https://github.com/DIYgod/RSSHub/
 ENV NODE_ENV production
 ENV TZ Asia/Shanghai
 
-ARG USE_CHINA_NPM_REGISTRY=0;
-ARG PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1;
+ARG USE_CHINA_NPM_REGISTRY=0
+ARG PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
 
 RUN ln -sf /bin/bash /bin/sh
 
@@ -18,11 +18,11 @@ WORKDIR /app
 
 COPY package.json tools/clean-nm.sh /app/
 
-RUN if [ "$USE_CHINA_NPM_REGISTRY" = 1 ]; then \
+RUN if [ "$USE_CHINA_NPM_REGISTRY" = "1" ]; then \
   echo 'use npm mirror'; npm config set registry https://registry.npm.taobao.org; \
   fi;
 
-RUN if [ "$PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" = 0 ]; then \
+RUN if [ "$PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" = "0" ]; then \
   apt-get install -y wget --no-install-recommends \
   && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
